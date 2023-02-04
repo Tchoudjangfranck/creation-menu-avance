@@ -1,0 +1,216 @@
+nav#menu 
+{
+    top: 0;
+}
+
+nav#menu ul
+{
+    background-color: rgb(255, 1, 77);
+    color: white;
+    text-transform: uppercase;
+}
+
+nav#menu > ul > li:first-child
+{
+    display: none;
+}
+
+nav#menu ul li a
+{
+    height: 50px;
+    line-height: 50px;
+    white-space: nowrap;
+}
+
+nav#menu ul li a:hover
+{
+    background-color: white;
+    color: black;
+}
+
+/** SOUS MENU **/
+
+nav#menu ul li:hover ul
+{
+    display: block;
+}
+
+nav#menu ul ul li a
+{
+    width: 200px;
+    text-align: center;
+}
+
+/** SOUS MENU DU SOUS MENU **/
+
+nav#menu ul ul ul
+{
+    top: 0;
+    left: 240px;
+}
+
+nav#menu ul li:hover ul ul
+{
+    display: none;
+}
+
+nav#menu ul ul li:hover ul
+{
+    display: block;
+}
+
+/** Mega Menu **/
+.mega-menu
+{
+    display: none;
+    width: 100%;
+    height: calc(100vh - 12vh);
+    background-color: #efefef;
+    color: black;
+    left: 0;
+    text-align: center;
+    overflow: auto;
+}
+
+.mega-menu,
+nav#menu .mega-menu ul
+{
+    background-color: #efefef;
+    opacity: 0.8;
+}
+
+nav#menu .mega-menu ul li
+{
+    padding: 5px;
+    border-radius: 5px;
+}
+
+nav#menu .mega-menu ul li:hover 
+{
+    background-color: black;
+}
+
+nav#menu .mega-menu ul li:hover a
+{
+    color: white;
+
+} 
+
+nav#menu .mega-menu ul li a:hover
+{
+    color: white;
+    background-color: black;
+}
+
+nav#menu .mega-menu ul li a
+{
+    font-weight: normal;
+    text-transform: capitalize;
+    color: black;
+    line-height: 0;        
+}
+
+.mega:hover .mega-menu
+{
+    display: flex;  
+}
+
+@media screen and (max-width:700px) 
+{
+    /** Menu **/
+
+    nav#menu > ul
+    {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    nav#menu > ul li
+    {
+        border-bottom: 0.1px solid #ccc;
+    }
+    
+    nav#menu > ul > li:last-child
+    {
+        border: none;
+    }
+    
+    nav#menu > ul > li
+    {
+        display: none;
+    }
+    
+    nav#menu > ul > li:first-child
+    {
+        display: block;
+    }
+
+    nav#menu ul .mega-menu
+    {
+        display: none;
+    }
+
+    nav#menu > ul li a
+    {
+        text-align: center;
+    }
+    
+    .burger-icon::after
+    {
+        cursor: pointer;
+        content: "\2630";
+        float: right;
+    }
+    
+    .close-icon::after
+    {
+        cursor: pointer;
+        content: "\1F5D9";
+        float: right;
+    }
+
+    .dropdown::after
+    {
+        content: " ";
+    }
+
+    /** Sous Menu  **/
+    nav#menu ul ul li:hover ul
+    {
+        display: none;
+    }
+    
+    /** Sous Menu de Sous Menu  **/
+    nav#menu ul li:hover ul
+    {
+        display: none;
+    }
+}
+
+@media screen and (max-width:900px) 
+{
+    
+    /** SOUS MENU DU SOUS MENU **/
+
+    nav#menu ul ul.sliderleft ul
+    {
+        left: -240px;
+    }
+    
+   #menu ul ul.sliderleft .dropright::after
+    {
+        content: " ";
+    }
+
+    .dropleft::before
+    {
+        padding-right: 5px;
+        content: "\1F890";
+    }
+
+    /** Mega Menu **/
+     nav#menu .mega-menu
+    {
+        height: calc(100vh - 14vh);
+    }
+}
